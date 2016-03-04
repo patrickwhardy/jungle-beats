@@ -5,7 +5,9 @@ require_relative 'linkedlist'
 require 'pry'
 
 class LinkedlistTest < Minitest::Test
-
+  def setup
+    @linkedlist = Linkedlist.new("dep do dee")
+  end
   # def test_string_inputs_become_nodes
   #   linkedlist = Linkedlist.new
   #   linkedlist.string_to_node("dep")
@@ -25,7 +27,7 @@ class LinkedlistTest < Minitest::Test
 
   def test_prepend_adds_data_to_front_of_list
     linkedlist = Linkedlist.new("dep do dee")
-    linkedlist.prepend("dee")
+    linkedlist.prepend("dee do dee")
     assert_equal "dee", linkedlist.head.data
   end
 
